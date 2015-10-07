@@ -5,7 +5,7 @@ echo "enter deploy_wrap"
 DEPLOYPROJECTNAME="nclientAsset"
 NEWVERSION=$(git rev-parse --short HEAD)
 DEPLOYCOPY="~/DEPLOY/"
-DEPLOYDEST="/home/wwwroot/asset.senyu.me/public_html/knewsAsset/prelease/deploy/"
+DEPLOYDEST="/home/wwwroot/assets.senyu.me/public_html/knewsAsset/prelease/deploy/"
 DEPLOYFILENAME=deploy_${DEPLOYPROJECTNAME}_${NEWVERSION}.tar.gz
 DEPLOYSERVER="deploy@senyu.me"
 DEPLOYMODE="PRELEASE"
