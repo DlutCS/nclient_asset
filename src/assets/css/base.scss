@@ -1,3 +1,5 @@
+@import "./constant.scss";
+
 html {
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%
@@ -133,4 +135,35 @@ height: 1px;
     filter: blur(1.5px);
 
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1.5, MakeShadow=false); /* IE6~IE9 */
+}
+
+html{
+  height:100%;
+  //position:relative;
+}
+body{
+  height:100%;
+  //position:relative;
+  //text-align: center;
+
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100%;
+  margin: 0 auto -100px;
+  //width: 1000px;
+  background-color:#EEE;
+  //box-shadow:0 0 15px 1px #999;
+}
+
+.content {
+  height: 1000px;
+}
+
+
+.footer {
+  height: 100px;
+
+
 }

@@ -1,3 +1,5 @@
+@import "../constant.scss";
+
 .header-wrap {
 
   .header-topinfo {
@@ -27,6 +29,7 @@
     } 
 
     .header-moving-wrap {
+      display: none;
       position: absolute;
       bottom: 0px;
       left: 0;
@@ -36,6 +39,10 @@
       background: $HeaderContentBackgroundColorDark;
       transition: left $HeaderMovingOption,
                   width $HeaderMovingOption;
+
+      &.active {
+        display: block;
+      }
     }
     .column { 
       .col-block {
