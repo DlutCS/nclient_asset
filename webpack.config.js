@@ -28,15 +28,18 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+      //loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
     },
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+      //loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
     },
     {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader!postcss-loader")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+      //loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader!postcss-loader")
     }]
   },
   postcss: [ autoprefixer({ browsers: ['last 4 versions']  })  ],
