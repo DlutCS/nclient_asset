@@ -17,7 +17,7 @@ echo $DEPLOYDEST
 echo $DEPLOYFILENAME
 echo $DEPLOYSERVER
 
-cd build
+cd ${GITBASE}/build
 tar -zcf ../$DEPLOYFILENAME *
 
 scp -i ~/.ssh/id_rsa  -o StrictHostKeyChecking=no -p 22 ../${DEPLOYFILENAME} ${DEPLOYSERVER}:${DEPLOYCOPY}

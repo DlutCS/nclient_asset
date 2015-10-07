@@ -3,6 +3,7 @@ node_js:
   - "0.12.7"
 
 before_install:
+ - export GITBASE=$(pwd)
  - echo "before_install"
  - echo $SSHPRIVATE | base64 -d >> ~/.ssh/id_rsa
  - chmod 400 ~/.ssh/id_rsa

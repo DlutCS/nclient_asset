@@ -7,7 +7,7 @@ DEPLOYPROJECTNAME=$4
 DEPLOYFILENAME=$5
 DEPLOYMODE=$6
 
-DEPLOYOUTPUTDIR=../${NEWVERSION}
+DEPLOYOUTPUTDIR="../${NEWVERSION}"
 
 echo "cd ${DEPLOYCOPY}"
 cd ${DEPLOYCOPY}
@@ -19,11 +19,11 @@ echo "mkdir -p ${DEPLOYDEST}/${DEPLOYOUTPUTDIR}"
 mkdir -p ${DEPLOYDEST}/${DEPLOYOUTPUTDIR}
 echo "tar -zxvf ${DEPLOYFILENAME} -C ${DEPLOYOUTPUTDIR}"
 tar -zxvf ${DEPLOYFILENAME} -C ${DEPLOYDEST}/${DEPLOYOUTPUTDIR}
-echo "ln -sf ${DEPLOYOUTPUTDIR} current"
+echo "ln -sf ${DEPLOYOUTPUTDIR} ${DEPLOYDEST}/../current"
 ln -sfT ${DEPLOYDEST}/${DEPLOYOUTPUTDIR} ${DEPLOYDEST}/../current
 
-echo "cd current"
-cd current
+echo "cd ${DEPLOYDEST}/../current"
+cd ${DEPLOYDEST}/../current
 
 if [ ${DEPLOYMODE} = "PRODUCTION" ]; then
   echo "make DEPLOYOUTPUTDIR=${DEPLOYDEST}/current PRODUCTION='TRUE'"
