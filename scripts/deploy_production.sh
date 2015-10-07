@@ -17,6 +17,7 @@ echo $DEPLOYDEST
 echo $DEPLOYFILENAME
 echo $DEPLOYSERVER
 
+ls -l ${GITBASE}
 cd ${GITBASE}/build
 tar -zcf ../$DEPLOYFILENAME *
 
