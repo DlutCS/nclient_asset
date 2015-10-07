@@ -10,13 +10,14 @@ var srcBase = path.resolve( __dirname, 'src/' ),
 
 
 module.exports = {
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    srcBase + '/assets/js/index.es6'
-    ],
+  entry: {
+      'hot': ['webpack/hot/dev-server','webpack-dev-server/client?http://localhost:8080'],
+      'index': srcBase + '/assets/js/index.es6',
+      'news': srcBase + '/assets/js/news.es6'
+    },
     plugins: [
-      new ExtractTextPlugin("[name].css")
+      new ExtractTextPlugin("[name].css"),
+      new CommonsChunkPlugin('common', 'common.js', ['index', 'news'])
     ],
     module: {
     loaders: [{
@@ -41,6 +42,7 @@ module.exports = {
   postcss: [ autoprefixer({ browsers: ['last 4 versions']  })  ],
   output: {
       path: buildBase,
-      filename: 'bundle.js',
+      filename: '[name].bundle.js',
+      publicPath: "http://localhost:8080/assets/"
   },
 };
