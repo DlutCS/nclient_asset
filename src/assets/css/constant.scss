@@ -7,4 +7,16 @@ $HeaderContentBackgroundColor: #00B266;
 $HeaderContentBackgroundColorHighlight: #40C376;
 $HeaderContentBackgroundColorDark: #287755;
 
-$HeaderMovingOption: 0.1s ease
+$HeaderMovingOption: 0.1s ease;
+
+//Slide
+$PC_slideBoxHeight: 360px;
+$PC_slideBoxWidth: $PC_contentWidth;
+$slideLayoutRadio: 2;
+//Slide Scale
+//+---+-----+
+//|   +-+-+-+
+//+---+-+-+-+
+//This means Radio is 3
+$slideLayoutBoxWidthBase: 192px;
+$slideLayoutBoxHeightBase: 120px;

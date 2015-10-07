@@ -34,7 +34,7 @@
   },
   "scripts": {
     "gbuild": "grunt",
-    "build": "webpack --output-public-path /assets/",
+    "build": "webpack --debug --output-public-path /assets/",
     "dev": "webpack-dev-server -c webpack.config.js --devtool eval --progress --colors --hot --content-base build --inline --output-public-path //127.0.0.1:8080/assets/"
   },
   "dependencies": {

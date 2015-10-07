@@ -1,11 +1,11 @@
 'use strict';
 
 var path = require('path');
-var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin')
+var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require('autoprefixer');
 
-var srcBase = path.resolve( __dirname, 'src/' ),
+var srcBase = path.resolve(__dirname, 'src/' ),
     buildBase = path.resolve( __dirname, 'build/' );
 
 
@@ -45,4 +45,5 @@ module.exports = {
       filename: '[name].bundle.js',
       publicPath: "http://localhost:8080/assets/"
   },
+  debug: true
 };
