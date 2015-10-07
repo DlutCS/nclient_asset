@@ -8,12 +8,14 @@ before_install:
  - chmod 400 ~/.ssh/id_rsa
  - chmod +x ./scripts/*
 
-install: echo 'install'
+install:
+ - echo 'install'
+ - npm install
 
 script: 
  - echo 'script'
  # npm
-
+ - npm run build
  - echo 'script done'
 
 
