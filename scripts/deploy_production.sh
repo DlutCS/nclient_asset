@@ -17,6 +17,10 @@ echo $DEPLOYDEST
 echo $DEPLOYFILENAME
 echo $DEPLOYSERVER
 
+//build
+npm install 
+npm build
+
 ls -l ${GITBASE}
 cd ${GITBASE}/build
 tar -zcf ../$DEPLOYFILENAME *
