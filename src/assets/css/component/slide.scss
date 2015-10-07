@@ -1,0 +1,32 @@
+@import "../constant.scss";
+//Slide
+.slide-wrap {
+	width: 100%;
+  position: fixed;
+  z-index: -1;
+  .slide-box {
+    width: $PC_slideBoxWidth;
+    margin: 0 auto;
+    height: $PC_slideBoxHeight;
+    background-color: #999;
+
+
+
+    .slide-clip {
+      border: 1px solid #FFF;
+      margin: 1px;
+      
+    
+      @for $i from 1 to 8 {
+        &.slide-clip-#{$i} {
+          width: $slideLayoutBoxWidthBase * $i -5px;
+          height: $slideLayoutBoxHeightBase * $i -5px;
+        }
+      }
+      
+      
+      
+      
+    }
+  }
+}
