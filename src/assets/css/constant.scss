@@ -1,17 +1,22 @@
 // Base
-$PC_contentWidth: 960px;
+$PC_pageWidth: 960px;
+$FontColorGray: #999;
 
-
-// Header
-$HeaderContentBackgroundColor: #00B266;
+// Header Green
+$HeaderContentBackgroundColor: #336699;
 $HeaderContentBackgroundColorHighlight: #40C376;
 $HeaderContentBackgroundColorDark: #287755;
+
+// Header Blue
+$HeaderContentBackgroundColor: #4878FF;
+$HeaderContentBackgroundColorHighlight: #0D6AE3;
+$HeaderContentBackgroundColorDark: #FFC631;
 
 $HeaderMovingOption: 0.1s ease;
 
 //Slide
 $PC_slideBoxHeight: 360px;
-$PC_slideBoxWidth: $PC_contentWidth;
+$PC_slideBoxWidth: $PC_pageWidth;
 $slideLayoutRadio: 2;
 //Slide Scale
 //+---+-----+
@@ -20,3 +25,21 @@ $slideLayoutRadio: 2;
 //This means Radio is 3
 $slideLayoutBoxWidthBase: 192px;
 $slideLayoutBoxHeightBase: 120px;
+
+
+//Content
+$PC_contentWidth: $PC_pageWidth;
+$PC_sectionLeftWidth: $PC_contentWidth * 0.7 - 3px;
+$PC_sectionRightWidth: $PC_contentWidth * 0.3 - 3px;
+$PC_sectionNewsHeight: 150px;
+$PC_sectionImageWrapWidth: $PC_sectionLeftWidth * 0.275 -2px;
+$PC_sectionInfoWrapWidth: $PC_sectionLeftWidth * 0.725 - 2px;
+
+//News-Block
+$NewsBlockTitleColor: #333;
+$NewsBlockAuthorColor: $FontColorGray;
+$NewsBlockCommentColor: $FontColorGray;
+$NewsBlockTimeColor: $FontColorGray;
+$NewsBlockTagsColor: $FontColorGray;
+
+

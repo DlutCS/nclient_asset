@@ -2,11 +2,14 @@
 //Base
 html {
   -ms-text-size-adjust:100%;
-  -webkit-text-size-adjust:100%
+  -webkit-text-size-adjust:100%;
+  font-smoothing: antialiased;
 }
 body {
-  line-height:1.6;
-  font-family: "思源黑体","Adobe 黑体 St R", "Microsoft YaHei","微软雅黑","华文细黑",Helvetica,"黑体",Arial,Tahoma,"楷体";
+  line-height: 1.6;
+  font-weight: normal;
+  font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;;
+  //font-family: "思源黑体","Adobe 黑体 St R", "Microsoft YaHei","微软雅黑","华文细黑",Helvetica,"黑体",Arial,Tahoma,"楷体";
   //font-family:"Microsoft YaHei","微软雅黑",Helvetica,"黑体",Arial,Tahoma;
   color:#222;
   font-size:16px;
@@ -158,6 +161,7 @@ body{
   //box-shadow:0 0 15px 1px #999;
 }
 
+/*
 .content {
   height: 1000px;
 }
@@ -168,3 +172,4 @@ body{
 
 
 }
+*/

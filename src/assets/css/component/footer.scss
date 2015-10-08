@@ -1,0 +1,28 @@
+@import '../constant.scss';
+
+.footer-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #999;
+
+  .inner {
+    margin: 0 auto;
+    width: $PC_pageWidth;
+    height: 100%;
+  }
+
+  .top {
+    height: 25px;
+    background-color: #dee0e5;
+  }
+
+  .section {
+    height: 100px;
+    background-color: #2d3237;
+  }
+
+  .bottom {
+    height: 30px;
+    background-color: #23282d;
+  }
+}

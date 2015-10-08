@@ -16,15 +16,25 @@ var init = function () {
   eventAction( navItem[0] )
   moving.addClass('active')
   navItem.on('mouseenter mouseleave', function (_e) {
-    if ( timeInterval ) clearTimeout(timeInterval);
     var e = window.event || _e
     var target = e.target || e.srcElement
 
+    if ( target.nodeName.toLowerCase() === 'a' ) {
+      //理论上 内层元素的访问都应该禁止
+      return;
+    }
+
+    if ( timeInterval ) {
+      clearTimeout(timeInterval);
+      timeInterval = null;
+    }
+
     eventAction( target);
-    timeInterval = setTimeout(function () {
-      eventAction( navItem[0] )
-    }, 1000)
-    
+    if ( e.type === 'mouseout' ) {
+      timeInterval = setTimeout(function () {
+        eventAction( navItem[0] )
+      }, 1000)
+    }
   })
 }
 

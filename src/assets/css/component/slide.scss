@@ -10,8 +10,6 @@
     height: $PC_slideBoxHeight;
     background-color: #999;
 
-
-
     .slide-clip {
       border: 1px solid #FFF;
       margin: 1px;
@@ -23,10 +21,14 @@
           height: $slideLayoutBoxHeightBase * $i -5px;
         }
       }
-      
-      
-      
-      
+
+    }
+    .slide-clip-source {
+      position: relative;
+      .image {
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 }
