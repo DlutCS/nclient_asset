@@ -34,6 +34,7 @@ var dirsOut = {
 };
 
 function init(_option) {
+
   var cid = params.length;
   var param = {};   //current config
   params.push(param);
@@ -47,7 +48,9 @@ function init(_option) {
     eles: null,
     paths: null,
     cur: 0,
-    data: null
+    data: null,
+    thandle: [],
+    stop: false
   }, _option);
 
   param.option = option;
@@ -92,11 +95,12 @@ function bindEvent(cid) {
     // this is 'clip-source'
     
     var mask = ele.find(option.panelSelector);
-    //console.log({obj: mask})
+
     var id = ele.data('slide-id')
-    console.log()
+
     if ( e.type === 'mouseout' ) {
-      
+      option.stop = false
+      option.thandle.push( setTimeout(option.loop,1) )
       sweep(cid, id, 3, 1, function(){
         mask.data('sync', 0)
 
@@ -106,14 +110,25 @@ function bindEvent(cid) {
       })
     }
     else {
-
+      
+      clear();
+      option.stop = true
       sweep(cid, id, 3, 0, null, {
         setSync: true,
         isEnter: true
       })
+      
     }
     
   })
+
+  function clear() {
+    var len = option.thandle.length;
+    while(len--) {
+      clearTimeout(option.thandle[len]);
+      option.thandle.pop()
+    }
+  }
 }
 
 function initAction(cid) {
@@ -124,16 +139,16 @@ function initAction(cid) {
   var paths = option.paths;
   var cur = option.cur, next;
 
-  console.log(panels)
-
   function loop() {
+    console.log('loop')
     next = (cur+1) % panels.length;
     var cbcnt = 0;
     function cb() {
 
       cbcnt++;
       if (cbcnt == 2)
-        setTimeout(loop, option.delay)
+      if ( !option.stop )
+        option.thandle.push( setTimeout(option.loop, option.delay) )
     }
 
     sweep(cid, cur, 3, 1, cb);
@@ -143,8 +158,8 @@ function initAction(cid) {
 
     
   }
-
-  setTimeout(loop, 1);
+  option.loop = loop;
+  option.thandle.push( setTimeout(option.loop,1) )
 }
 
 function sweep(cid, id, dir, type, callback, op) {
@@ -170,6 +185,7 @@ function sweep(cid, id, dir, type, callback, op) {
     isEnter: false,
     isLeave: false
   }, op)
+
   var sync = ele.data('sync');
 
 
@@ -189,13 +205,17 @@ function sweep(cid, id, dir, type, callback, op) {
 
   op.isLeave || ele.removeClass(option.animatingClass);
   setTimeout(function () {
-    op.isLeave || ele.css(dirsBegin[dir]);
+    op.isLeave || ele.css('-ms-transform', '-ms-translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
+    op.isLeave || ele.css('-webkit-transform', '-webkit-translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
+    op.isLeave || ele.css('transform', 'translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
     option.data[id] = dirsBegin[dir];
 
     setTimeout(function(){
       ele.addClass(option.animatingClass);
       setTimeout(function() {
-        ele.css(dirsEnd[dir]);
+        ele.css('-ms-transform', '-ms-translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
+        ele.css('-webkit-transform', '-webkit-translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
+        ele.css('transform', 'translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
         option.data[id] = dirsEnd[dir];
         cb();
       },32)
