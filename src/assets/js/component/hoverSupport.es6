@@ -17,13 +17,25 @@ var init = (function (win, undefined) {
     var $doc = $(doc);
     var ele = $( option.selector );
     var eleTop = initOffsetTop || (initOffsetTop = getOffset( ele[0] ));
+    var state = false;
+    var slide = $('.slide-element-child')
     $(doc).bind('scroll', function (e) {
       var docTop = $doc.scrollTop();
       if ( eleTop - docTop < option.top ) {
-        ele.addClass('active')
+        if (state === false ) {
+          ele.addClass('active');
+          state = true;
+          slide.fadeOut(1);
+        }
+        
       }
       else {
-        ele.removeClass('active')
+        if ( state === true ) {
+          ele.removeClass('active')
+          state = false;
+          slide.fadeIn(200);
+        }
+        
       }
     })
   }
