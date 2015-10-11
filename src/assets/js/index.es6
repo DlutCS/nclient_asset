@@ -17,7 +17,9 @@ $(function () {
   Header.init();
 
   // Slide
-  Slide.init();
+  Slide.init({
+    paths:[0,1,2,5,4,3]
+  });
 
   HoverSupport.init({
     top: 50,

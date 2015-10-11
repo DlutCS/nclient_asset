@@ -16,20 +16,24 @@ body{
   min-height: 100%;
   margin: 0 auto -100px;
   //width: 1000px;
-  background-color:#EEE;
+  background-color: $baseBackgroundColor;
   //box-shadow:0 0 15px 1px #999;z-index: 0;
 }
 
 .content {
   position: relative;
   //height: 1000px;
-  padding-top: 45px;
+  padding-top: $HeaderHeight+5px;
   z-index: 0;
 }
 
 
 .content .content-wrap {
-  margin-top: $PC_slideBoxHeight;
+  margin-top: $PC_slideBoxHeight+15px;
+
+@media (min-width: 1200px) {
+  margin-top: $PC_slideBoxWideHeight+15px;
+}
   padding-bottom: 105px;
   width: 100%;
   z-index: 10;
@@ -40,6 +44,9 @@ body{
     box-shadow: 0 0 10px #666;
     background-color: #F3F3F3;
     width: $PC_contentWidth;
+@media (min-width: 1200px) {
+  width: $PC_contentWideWidth;
+}
     margin: 0 auto;
     min-height: 1000px;
     padding: 5px;
@@ -50,6 +57,9 @@ body{
     }
     .section-left {
       width: $PC_sectionLeftWidth;
+@media (min-width: 1200px) {
+  width: $PC_sectionLeftWideWidth;
+}
     }
     .section-right {
       width: $PC_sectionRightWidth;
@@ -110,7 +120,10 @@ body{
 
     .news-info {
       float: right;
-      max-width: $PC_sectionInfoWrapWidth;
+      width: $PC_sectionInfoWrapWidth;
+@media (min-width: 1200px) {
+  width: $PC_sectionInfoWrapWideWidth;
+}
       height: 100%;
       box-shadow: 1px 1px 1px #CCC;
       //background-color: #AAA;
@@ -180,7 +193,7 @@ body{
   background-color: #999;
   &.active {
     position: fixed;
-    top: 50px;
+    top: $HeaderHeight+ 5px;
   }
 }
 

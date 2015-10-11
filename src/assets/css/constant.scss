@@ -1,5 +1,8 @@
 // Base
 $PC_pageWidth: 960px;
+$PC_pageWideWidth: 1160px;
+$baseBackgroundColor: #E4E5E7;
+
 $FontColorGray: #999;
 
 // Header Green
@@ -12,28 +15,58 @@ $HeaderContentBackgroundColor: #4878FF;
 $HeaderContentBackgroundColorHighlight: #0D6AE3;
 $HeaderContentBackgroundColorDark: #FFC631;
 
-$HeaderMovingOption: 0.1s ease;
+// Header White
+
+$HeaderContentBackgroundColor: #FFF;
+$HeaderContentBackgroundColorHighlight: #EEE;
+$HeaderContentBackgroundColorDark: #2969ba;
+
+$HeaderHeight: 50px;
+$HeaderContengTitleColor: #2969ba;
+$HeaderContentBorderBottomColor: #CCC;
+$HeaderContentShadowColor: rgba(0,0,0,0.1);
+$HeaderContentFontColor: #444;
+$HeaderContentFontColorHover: #178fe6;
+$HeaderContentLeftFontSize: 20px;
+$HeaderContentLeftFontPadding: ($HeaderHeight - $HeaderContentLeftFontSize )/2;
+$HeaderContentNavFontSize: 14px;
+$HeaderContentNavFontPadding: ($HeaderHeight - $HeaderContentNavFontSize )/2;
+$HeaderContentFontFamily: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+
+$HeaderMovingOption: 0.2s ease;
+
 
 //Slide
-$PC_slideBoxHeight: 360px;
+
 $PC_slideBoxWidth: $PC_pageWidth;
+$PC_slideBoxHeight: $PC_pageWidth/3.5;
+
+$PC_slideBoxWideWidth: $PC_pageWideWidth;
+$PC_slideBoxWideHeight: $PC_pageWideWidth/3.5;
 $slideLayoutRadio: 2;
 //Slide Scale
 //+---+-----+
 //|   +-+-+-+
 //+---+-+-+-+
-//This means Radio is 3
-$slideLayoutBoxWidthBase: 192px;
-$slideLayoutBoxHeightBase: 120px;
+$slideLayoutBoxWidthBase: $PC_slideBoxWidth/5;
+$slideLayoutBoxHeightBase: $PC_slideBoxHeight/2;
+$slideLayoutBoxWideWidthBase: $PC_slideBoxWideWidth/5;
+$slideLayoutBoxWideHeightBase: $PC_slideBoxWideHeight/2;
 
+$slideClipMargin: 2px;
 
 //Content
 $PC_contentWidth: $PC_pageWidth;
-$PC_sectionLeftWidth: $PC_contentWidth * 0.7 - 3px;
+$PC_contentWideWidth: $PC_pageWideWidth;
+
 $PC_sectionRightWidth: $PC_contentWidth * 0.3 - 3px;
+$PC_sectionLeftWidth: $PC_contentWidth - $PC_sectionRightWidth - 3px;
+$PC_sectionLeftWideWidth: $PC_contentWideWidth - $PC_sectionRightWidth - 3px;
+
 $PC_sectionNewsHeight: 150px;
 $PC_sectionImageWrapWidth: $PC_sectionLeftWidth * 0.275 -2px;
-$PC_sectionInfoWrapWidth: $PC_sectionLeftWidth * 0.725 - 2px;
+$PC_sectionInfoWrapWidth: $PC_sectionLeftWidth - $PC_sectionImageWrapWidth - 2px;
+$PC_sectionInfoWrapWideWidth: $PC_sectionLeftWideWidth - $PC_sectionImageWrapWidth - 2px;
 
 //News-Block
 $NewsBlockTitleColor: #333;
