@@ -8,17 +8,18 @@ import Header from './component/header.es6'
 import Slide from './component/slide.es6'
 import HoverSupport from './component/hoverSupport.es6'
 import Footer from './component/footer.es6'
+import LoginSupport from './component/loginSupport.es6'
 
-console.log('index.page1')
+console.log('index.page')
 
 
 $(function () {
   // Header
   Header.init();
-
+  LoginSupport.init();
   // Slide
   Slide.init({
-    paths:[0,1,2,5,4,3]
+    paths:[0,1,2,3,4,5]
   });
 
   HoverSupport.init({

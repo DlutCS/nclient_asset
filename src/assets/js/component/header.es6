@@ -15,6 +15,7 @@ var init = function () {
 
   eventAction( navItem[0] )
   moving.addClass('active')
+
   navItem.on('mouseenter mouseleave', function (_e) {
     var e = window.event || _e
     var target = e.target || e.srcElement

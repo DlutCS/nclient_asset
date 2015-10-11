@@ -15,7 +15,7 @@
     background-color: $HeaderContentBackgroundColor;
     border-bottom: 1px solid $HeaderContentBorderBottomColor;
     box-shadow: 0 0 5px $HeaderContentShadowColor;
-    
+    transform: translateZ(0);
   .header-content {
     height: 100%;
     position: relative;
@@ -53,7 +53,7 @@
       background-color: $HeaderContentBackgroundColorDark;
       transition: left $HeaderMovingOption,
                   width $HeaderMovingOption;
-    
+      transform: translateZ(0);
       &.active {
         display: block;
       }
