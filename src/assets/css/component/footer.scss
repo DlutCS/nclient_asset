@@ -8,6 +8,10 @@
   .inner {
     margin: 0 auto;
     width: $PC_pageWidth;
+/*
+@media (min-width: 1200px) {
+  width: $PC_pageWideWidth;
+}*/
     height: 100%;
   }
 
@@ -23,6 +27,13 @@
 
   .bottom {
     height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #666;
     background-color: #23282d;
+
+    .aliyun a {
+      color: #b1d1e8;
+    }
   }
 }

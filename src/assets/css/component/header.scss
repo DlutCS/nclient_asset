@@ -11,24 +11,29 @@
   }
   .header-content-wrap {
     width: 100%;
-    height: 42px;
+    height: $HeaderHeight;
     background-color: $HeaderContentBackgroundColor;
+    border-bottom: 1px solid $HeaderContentBorderBottomColor;
+    box-shadow: 0 0 5px $HeaderContentShadowColor;
     
   .header-content {
     height: 100%;
     position: relative;
     width: $PC_pageWidth;
+@media (min-width: 1200px) {
+  width: $PC_pageWideWidth;
+} 
     margin: 0 auto;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border-right: 1px solid rgba(128,128,128,0.1);
 
     .logo-block {
-      padding: 4px 12px 0 0;
+      padding: 9px 0 0 0;
       .icon-logo {
         width: 32px;
         height: 32px;
-        background: #FFF;
+        //background: #CCC;
         display: inline-block;
+        color: $HeaderContengTitleColor;
         font-size: 32px;
         line-height: 32px;
         font-size: 2rem;
@@ -41,7 +46,7 @@
       position: absolute;
       bottom: 0px;
       left: 0;
-      height: 4px;
+      height: 3px;
       min-width: 10px;
       width: 10px;
       box-shadow: 0 0px 1px #999;
@@ -59,10 +64,14 @@
 
       }
       .site-title {
-        padding: 6px 10px 0 0;
-        font-size: 18px;
-        font-size: 1.125rem;
-        color: #EEE;
+        padding: $HeaderContentLeftFontPadding 10px 0 0;
+        font-size: $HeaderContentLeftFontSize;
+        font-size: ($HeaderContentLeftFontSize/16px)rem;
+        line-height: $HeaderContentLeftFontSize;
+        line-height: ($HeaderContentLeftFontSize/16px)rem;
+        color: $HeaderContengTitleColor;
+        
+        font-family: $HeaderContentFontFamily;
       }
       ul {
         font-size: 0;
@@ -73,19 +82,22 @@
       }
 
       .header-navitem-wrap {
-        padding: 14px 20px;
+        padding: $HeaderContentNavFontPadding 20px;
         //border-right: 1px solid $HeaderContentBackgroundColorHighlight;
         transition: background 0.1s ease;
         a {
           display: block;
-          font-size: 14px;
-          font-size: 0.875rem;
-          line-height: 14px;
-          line-height: 0.875rem;
-          color: #EEE;
+          font-size: $HeaderContentNavFontSize;
+          font-size: ($HeaderContentNavFontSize/16px)rem;
+          line-height: $HeaderContentNavFontSize;
+          line-height: ($HeaderContentNavFontSize/16px)rem;
+          color: $HeaderContentFontColor;
+          font-family: $HeaderContentFontFamily;
         }
 
         &:hover {
+          cursor: pointer;
+          a { color: $HeaderContentFontColorHover; }
           background-color: $HeaderContentBackgroundColorHighlight;
         }
       }
