@@ -1,23 +1,23 @@
 @import '../constant.scss';
 
 .icon-footer {
-  background: url('../../image/icon_sprite_footer.png') no-repeat center center;
-  width: 275px;
-  height: 90px;
+  background: url('../../image/icon_sprite_footer_small.png') no-repeat center center;
+  width: 137px;
+  height: 45px;
   display: inline-block;
   vertical-align: middle;
-  zoom: 0.3;
+  zoom: 0.6;
   &.github {
     background-position: 0px 0px;
   }
   &.travis {
-    background-position: -275px 0px;
+    background-position: -137px 0px;
   }
   &.aliyun {
-    background-position: -550px 0px;
+    background-position: -275px 0px;
   }
   &.python {
-    background-position: -825px 0px;
+    background-position: -413px 0px;
   }
 }
 
@@ -55,7 +55,7 @@
       line-height: 32px;
       vertical-align: middle;
       .icon-footer {
-        vertical-align: -24px;
+        vertical-align: -12px;
       }
     }
   }
