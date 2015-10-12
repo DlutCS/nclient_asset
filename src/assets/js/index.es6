@@ -9,6 +9,7 @@ import Slide from './component/slide.es6'
 import HoverSupport from './component/hoverSupport.es6'
 import Footer from './component/footer.es6'
 import LoginSupport from './component/loginSupport.es6'
+import LoadMoreSupport from './component/loadMoreSupport.es6'
 
 console.log('index.page')
 
@@ -21,7 +22,7 @@ $(function () {
   Slide.init({
     paths:[0,1,2,3,4,5]
   });
-
+  LoadMoreSupport.init();
   HoverSupport.init({
     top: 50,
     selector: '#J_hover'
