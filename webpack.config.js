@@ -40,6 +40,10 @@ module.exports = {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
       //loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader!postcss-loader")
+    },
+    {
+      test: /\.(png|jpg)$/, 
+      loader: 'url-loader?limit=16384'
     }]
   },
   output: {
