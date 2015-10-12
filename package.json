@@ -11,6 +11,7 @@
     "es6-loader": "^0.2.0",
     "es6-promise": "^3.0.2",
     "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
     "grunt": "~0.4.1",
     "grunt-cmd-transport": "^0.4.1",
     "grunt-contrib-clean": "~0.4.0",
@@ -31,6 +32,7 @@
     "sass-loader": "^3.0.0",
     "scss-loader": "0.0.1",
     "style-loader": "^0.12.4",
+    "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0"
   },
