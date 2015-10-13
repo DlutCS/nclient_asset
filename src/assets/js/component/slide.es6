@@ -205,16 +205,16 @@ function sweep(cid, id, dir, type, callback, op) {
 
   op.isLeave || ele.removeClass(option.animatingClass);
   setTimeout(function () {
-    op.isLeave || ele.css('-ms-transform', '-ms-translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
-    op.isLeave || ele.css('-webkit-transform', '-webkit-translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
+    op.isLeave || ele.css('-ms-transform', 'translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
+    op.isLeave || ele.css('-webkit-transform', 'translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
     op.isLeave || ele.css('transform', 'translate('+dirsBegin[dir].left+','+dirsBegin[dir].top+')');
     option.data[id] = dirsBegin[dir];
 
     setTimeout(function(){
       ele.addClass(option.animatingClass);
       setTimeout(function() {
-        ele.css('-ms-transform', '-ms-translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
-        ele.css('-webkit-transform', '-webkit-translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
+        ele.css('-ms-transform', 'translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
+        ele.css('-webkit-transform', 'translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
         ele.css('transform', 'translate('+dirsEnd[dir].left+','+dirsEnd[dir].top+')');
         option.data[id] = dirsEnd[dir];
         cb();
