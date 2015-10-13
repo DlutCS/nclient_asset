@@ -6,7 +6,8 @@ var init = function () {
   
   // Header moving listener
   var navItem = $('#J_header_content .header-navitem-wrap')
-  var moving = $('#J_header_moving')
+  var moving = $('#J_header_moving');
+  var selectedIndex = 0;
   var timeInterval = null;
   var sync = false;
   var eventAction = function (ele) {
@@ -16,8 +17,10 @@ var init = function () {
 
   //ventAction( navItem[0] )
   navItem.map(function(k,v) {
-    if(navItem.eq(k).hasClass('selected'))
-      eventAction( navItem[k] )
+    if(navItem.eq(k).hasClass('selected')) {
+      selectedIndex = k;
+      eventAction( navItem[selectedIndex] )
+    }
   })
   moving.addClass('active')
 
@@ -43,7 +46,7 @@ var init = function () {
       // if sync === true means user clicked
       if ( sync === false ) {
         timeInterval = setTimeout(function () {
-          eventAction( navItem[0] )
+          eventAction( navItem[selectedIndex] )
         }, 1000)
       }
     }
