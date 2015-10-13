@@ -19,9 +19,7 @@ $(function () {
   Header.init();
   LoginSupport.init();
   // Slide
-  Slide.init({
-    paths:[0,1,2,3,4,5]
-  });
+  Slide.init();
   LoadMoreSupport.init();
   HoverSupport.init({
     top: 50,

@@ -112,7 +112,8 @@ body{
 
         .image {
           width: 100%;
-          height: 100%;
+          // Fix: 在低版本safari出现height扩展到 整页
+          //height: 100%;
         }
       }
       
