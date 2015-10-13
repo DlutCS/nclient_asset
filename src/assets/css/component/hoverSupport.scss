@@ -1,10 +1,37 @@
 @import "../constant.scss";
 //Hover
 .hover-wrap {
+  position: relative;
   width: $PC_sectionRightWidth;
   background-color: #999;
   &.active {
     position: fixed;
     top: $HeaderHeight+ 5px;
+  }
+
+  .hover-box {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 1px 0 rgba(52,52,52,0.7);
+    padding: 1em;
+    //border: 1px solid rgba(34,36,38,.15);
+    z-index: auto;
+
+    &.stacked::before, &.stacked:before,
+    &.stacked::after, &.stacked:after {
+      background-color: #FFF;
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      border-top: 1px solid rgba(34,36,38,.15);
+      background: rgba(0,0,0,.03);
+      width: 100%;
+      height: 6px;
+      visibility: visible;
+    }
+    &.stacked::before, &.stacked:before {
+      bottom: 0px;
+    }
   }
 }

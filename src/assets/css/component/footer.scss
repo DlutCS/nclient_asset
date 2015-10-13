@@ -4,6 +4,7 @@
   position: relative;
   height: 100px;
   z-index: 20;
+
 }
 
 .icon-footer {
@@ -45,6 +46,8 @@
   .top {
     height: 25px;
     background-color: #dee0e5;
+      border-top: 1px solid #C4C7CE;
+      box-shadow: 0 0 15px rgba(102, 102, 102, 0.5);
   }
 
   .section {
@@ -62,6 +65,7 @@
       vertical-align: middle;
       .icon-footer {
         vertical-align: -12px;
+        vertical-align: -0.625rem;
       }
     }
   }
