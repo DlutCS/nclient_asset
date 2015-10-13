@@ -1,5 +1,11 @@
 @import '../constant.scss';
 
+.footer {
+  position: relative;
+  height: 100px;
+  z-index: 20;
+}
+
 .icon-footer {
   background: url('../../image/icon_sprite_footer_small.png') no-repeat center center;
   width: 137px;
