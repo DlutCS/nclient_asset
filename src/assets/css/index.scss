@@ -190,14 +190,7 @@ body{
   }
 }
 
-.hover-wrap {
-  width: $PC_sectionRightWidth;
-  background-color: #999;
-  &.active {
-    position: fixed;
-    top: $HeaderHeight+ 5px;
-  }
-}
+
 
 
 .footer {
