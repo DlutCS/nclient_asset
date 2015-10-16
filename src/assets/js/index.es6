@@ -14,7 +14,6 @@ import LoadMoreSupport from './component/loadMoreSupport.es6'
 
 console.log('index.page')
 
-
 $(function () {
   // Header
   Header.init();
