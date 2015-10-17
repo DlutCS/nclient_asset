@@ -99,7 +99,7 @@ function afterAjax(cid) {
   var param = params[cid],
       option = param.option;
   option.sync = false;
-  option.button.removeClass(optoin.loadingClass)
+  option.button.removeClass(option.loadingClass)
 }
 module.exports = {
   init: init
