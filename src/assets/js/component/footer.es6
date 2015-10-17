@@ -4,6 +4,6 @@ var init = function () {
 
 }
 
-export default {
+module.exports = {
   init: init
 }

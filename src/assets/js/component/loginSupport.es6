@@ -42,6 +42,6 @@ var init = function (_option) {
   }
 }
 
-export default {
+module.exports = {
   init: init
 }

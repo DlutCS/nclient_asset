@@ -98,6 +98,6 @@ function afterAjax(cid) {
       option = param.option;
   option.sync = false;
 }
-export default {
+module.exports = {
   init: init
 }
