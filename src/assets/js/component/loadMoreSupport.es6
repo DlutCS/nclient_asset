@@ -11,6 +11,7 @@ function init(_option) {
   var option = $.extend({
     containerSelector: '#J_news_list',
     moreButtonSelector: '#J_news_load_more',
+    loadingClass: 'loading',
     sync: false,
     bottomLoading: true
   }, _option);
@@ -29,7 +30,7 @@ function initConfig(cid) {
   if ( !container.data('news-offset') )
     container.data('news-offset', 0)
   option.offset = container.children().length + container.data('news-offset');
-
+  option.button = $(option.moreButtonSelector)
 }
 
 
@@ -91,13 +92,15 @@ function bindEvent(cid) {
 function beforeAjax(cid) {
   var param = params[cid],
       option = param.option;
+  option.button.addClass(option.loadingClass)
 }
 
 function afterAjax(cid) {
   var param = params[cid],
       option = param.option;
   option.sync = false;
+  option.button.removeClass(optoin.loadingClass)
 }
-export default {
+module.exports = {
   init: init
 }

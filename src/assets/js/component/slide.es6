@@ -229,6 +229,6 @@ function sweep(cid, id, dir, type, callback, op) {
   }
 }
 
-export default {
+module.exports = {
   init: init
 }

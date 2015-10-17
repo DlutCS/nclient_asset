@@ -140,6 +140,28 @@
       font-size: 12px;
       font-size: 0.625rem;
     }
+    
 
+    .slide-blank {
+
+      .blank-box {
+        width: 900px;
+        margin: 0 auto;
+        padding-top: 130px;
+        h2 {
+          text-align: center;
+          font-size: 56px;
+          font-family: Georgia,Cambria,"Times New Roman","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif,Times,serif;
+          font-weight: bold;
+          margin-bottom: 50px;
+        }
+        .err-info {
+          text-align: center;
+          padding: 5px 0;
+          font-size: 20px;
+          color: #dd5f0d;
+        }
+      }
+    }
   }
 }

@@ -103,8 +103,25 @@
         }
       }
 
-      .search {
-
+      .user-profile {
+        font-size:0;
+        a {
+          padding: $HeaderContentNavFontPadding 5px;
+          display: inline-block;
+          font-size: $HeaderContentNavFontSize;
+          font-size: ($HeaderContentNavFontSize/16px)rem;
+          line-height: $HeaderContentNavFontSize;
+          line-height: ($HeaderContentNavFontSize/16px)rem;
+          background-color: #F9F9F9;
+          border-left: 1px solid #EEE;
+          &:hover, &:active {
+            background-color: $HeaderContentBackgroundColorHighlight;
+          }
+          &.nohover:hover, &.nohover:active {
+            background-color: #F9F9F9;
+            cursor: normal;
+          }
+        }
       }
     }
   }

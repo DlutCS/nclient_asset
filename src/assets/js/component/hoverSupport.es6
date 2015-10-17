@@ -42,7 +42,7 @@ var init = (function (win, undefined) {
   }
 })(window)
 
-export default {
+module.exports = {
   init: init
 }
 
