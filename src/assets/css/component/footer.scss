@@ -1,0 +1,91 @@
+@import '../constant.scss';
+
+.footer {
+  position: relative;
+  height: 125px;
+  z-index: 20;
+
+}
+
+.icon-footer {
+  background: url('../../image/icon_sprite_footer_small.png') no-repeat center center;
+  width: 137px;
+  height: 45px;
+  width: (137/16)rem;
+  height: (45/16)rem;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 0.6;
+  &.github {
+    background-position: 0px 0px;
+  }
+  &.travis {
+    background-position: -137px 0px;
+    background-position: (-137/16)rem 0rem;
+  }
+  &.aliyun {
+    background-position: -275px 0px;
+    background-position: (-275/16)rem 0rem;
+  }
+  &.python {
+    background-position: -413px 0px;
+    background-position: (-413/16)rem 0rem;
+  }
+}
+
+.footer-wrap {
+  width: 100%;
+  height: 100%;
+  background-color: #999;
+
+  .inner {
+    margin: 0 auto;
+    width: $PC_pageWidth;
+
+@media (min-width: 1200px) {
+  width: $PC_pageWideWidth;
+}
+    height: 100%;
+  }
+
+  .top {
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    background-color: #dee0e5;
+      border-top: 1px solid #C4C7CE;
+      box-shadow: 0 0 15px rgba(102, 102, 102, 0.5);
+  }
+
+  .section {
+    height: 70px;
+    
+    background-color: #2d3237;
+    .about {
+      height: 40px;
+    }
+    .service {
+      font-size: 13px;
+      color: #CCC;
+      font-weight: normal;
+      line-height: 26px;
+      vertical-align: middle;
+      .icon-footer {
+        vertical-align: -12px;
+        vertical-align: -0.625rem;
+      }
+    }
+  }
+
+  .bottom {
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    color: #666;
+    background-color: #23282d;
+
+    .aliyun a {
+      color: #b1d1e8;
+    }
+  }
+}

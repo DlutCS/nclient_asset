@@ -4,29 +4,164 @@
 	width: 100%;
   position: fixed;
   z-index: -1;
+
   .slide-box {
-    width: $PC_slideBoxWidth;
+    position: relative;
+    width: $PC_slideBoxWidth+$slideClipMargin*5;
     margin: 0 auto;
     height: $PC_slideBoxHeight;
-    background-color: #999;
 
+@media (min-width: 1200px) {
+  width: $PC_slideBoxWideWidth+$slideClipMargin*5;
+  height: $PC_slideBoxWideHeight;
+}
 
+    .slide-box-adjust {
+      margin: 0 auto;
+    }
+    
 
     .slide-clip {
-      border: 1px solid #FFF;
-      margin: 1px;
+      position: relative;
+      box-shadow: 0 0 1px #333;
+      transform: translateZ(0);
+      margin: $slideClipMargin;
+      overflow: hidden;
       
-    
-      @for $i from 1 to 8 {
-        &.slide-clip-#{$i} {
-          width: $slideLayoutBoxWidthBase * $i -5px;
-          height: $slideLayoutBoxHeightBase * $i -5px;
+
+      &.slide-clip-full {
+        width: 100%;
+        height: 100%;
+      }
+
+      @for $i from 1 to 3 {
+          &.slide-clip-#{$i} {
+            width: $slideLayoutBoxWidthBase * $i - $slideClipMargin;
+            height: ($slideLayoutBoxHeightBase + $slideClipMargin) * $i - $slideClipMargin * 2;
+          }
+      }
+
+
+@media (min-width: 1200px) {
+
+      @for $i from 1 to 3 {
+          &.slide-clip-#{$i} {
+            width: $slideLayoutBoxWideWidthBase * $i -$slideClipMargin;
+            height: ($slideLayoutBoxWideHeightBase + $slideClipMargin) * $i - $slideClipMargin * 2;
+          }
+      }
+}
+
+      .slide-animating {
+        transition: transform 1.0s ease;
+      }
+    }
+
+    .slide-clip-source {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      .image {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+
+        &.error {
+          display: none!important;
+        }
+        
+      }
+      //这里放 阴影
+      .slide-shadow {
+        width: 100%;
+        height: 100%;
+
+        background-
+
+        &::before,&:before {
+          transform: translateZ(0);
+          background: -webkit-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.6));
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.7;
+          content: " ";
+          
         }
       }
-      
-      
-      
-      
+    }
+    .slide-panel {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: translate(-100%,0);
+      width: 100%;
+      height: 100%;
+      background-color: #5675AF;
+      display: none;
+      opacity: 0.9;
+      color: #FFF;
+      text-shadow: 0 0 1px #000;
+      span {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .slide-click {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .slide-clip.slide-focus-child {
+      .slide-panel {
+        display: block!important;
+      }
+      .slide-clip-source::after, .slide-clip-source:after {
+        display: none!important;
+      }
+      .slide-badge {
+        box-shadow: 1px 1px 1px #999;
+        transform: translateZ(0);
+      }
+    }
+    .slide-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      padding: 2px 5px;
+      background-color: #FDC600;
+      box-shadow: 1px 1px 1px #333;
+      transform: translateZ(0);
+      font-size: 12px;
+      font-size: 0.625rem;
+    }
+    
+
+    .slide-blank {
+
+      .blank-box {
+        width: 900px;
+        margin: 0 auto;
+        padding-top: 130px;
+        h2 {
+          text-align: center;
+          font-size: 56px;
+          font-family: Georgia,Cambria,"Times New Roman","Microsoft YaHei","微软雅黑","STHeiti","WenQuanYi Micro Hei",SimSun,sans-serif,Times,serif;
+          font-weight: bold;
+          margin-bottom: 50px;
+        }
+        .err-info {
+          text-align: center;
+          padding: 5px 0;
+          font-size: 20px;
+          color: #dd5f0d;
+        }
+      }
     }
   }
 }

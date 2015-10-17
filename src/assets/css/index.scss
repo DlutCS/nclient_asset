@@ -11,38 +11,166 @@ body{
 
 }
 
-.wrap {
-  width: 100%;
-  min-height: 100%;
-  margin: 0 auto -100px;
-  //width: 1000px;
-  background-color:#EEE;
-  //box-shadow:0 0 15px 1px #999;
+.news-list {
+
+  li {
+    display: block;
+  }
+ 
+  .news-block {
+    position: relative;
+    width: 100%;
+    min-height: $PC_sectionNewsHeight;
+
+    background-color: #FFF;
+    box-shadow: 0 0 3px rgba(128,128,128,0.5);
+    margin-bottom: 15px;
+    
+    .news-image-wrap {
+      float: left;
+      width: $PC_sectionImageWrapWidth;
+      //height: 100%;
+      box-shadow: 1px 1px  1px rgba(0,0,0,0.05);
+      //background-color: #BBB;
+      
+      .image-box {
+        position: relative;
+        margin: 10px auto;
+        width: ($PC_sectionImageWrapWidth) - 20px;
+        min-height: 100px;
+        //background-color: #CCC;
+        font-size: 0;
+        .badge {
+          position: absolute;
+          left: 0;
+          top: 0;
+          padding: 2px 5px;
+          background-color: #FDC600;
+          box-shadow: 1px 1px 1px rgba(52,52,52,0.5);
+          font-size: 12px;
+          font-size: 0.625rem;
+        }
+
+        .image {
+          width: 100%;
+          // Fix: 在低版本safari出现height扩展到 整页
+          //height: 100%;
+        }
+      }
+      
+    }
+
+    .news-info {
+      float: right;
+      width: $PC_sectionInfoWrapWidth;
+@media (min-width: 1200px) {
+  width: $PC_sectionInfoWrapWideWidth;
+}
+      height: 100%;
+      //box-shadow: 1px 1px 1px #CCC;
+      transform: translateZ(0);
+      //background-color: #AAA;
+
+      .info {
+        display: block;
+        padding: 0 10px;
+        &.first {
+          padding-top: 10px;
+          .title {
+            color: $NewsBlockTitleColor;
+            font-weight: normal;
+            font-size: 22px;
+            font-size: 1.375rem;
+            line-height: 22px;
+            line-height: 1.2375rem;
+            //font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+          }
+        }
+        &.second {
+          padding-top: 5px;
+          padding-bottom: 5px;
+          /* 由于有空格，写在父层 */
+            font-size: 14px;
+            font-size: 0.875rem;
+            line-height: 14px;
+            line-height: 0.875rem;
+     
+          span {
+            display: inline-block;
+          }
+          .author,.time,.comment.dividor {
+            font-size: 13px;
+            font-size: (13/16)rem;
+          }
+          .dividor {
+            color: #b3b3b3;
+          }
+          .author {
+            color: $NewsBlockAuthorColor;
+          }
+          .time {
+            color: $NewsBlockTimeColor;
+          }
+          .comment {
+            color: $NewsBlockCommentColor;
+          }
+        }
+        &.paragraph {
+          .abstract {
+            word-break: break-all;
+            font-size: 16px;
+            font-size: 1rem;
+            color: $NewsBlockParagraphColor;
+          }
+          min-height: 65px;
+        }
+        &.bottom {
+          margin-bottom: 3px;
+          .tags {
+            color: $NewsBlockTagsColor;
+            font-size: 14px;
+            font-size: 0.875rem;
+            border-radius: 20px;
+            border: 1px solid rgba(238, 110, 80, 0.4);
+            padding: 1px 5px;
+          }
+
+        }
+      }
+      
+    }
+
+
+
+  }
 }
 
-.content {
-  position: relative;
-  height: 1000px;
-  padding-top: 45px;
-  z-index: 0;
+.load-more {
+  text-align: center;
+  .button {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 40px;
+    border: 1px solid #CCC;
+    background: #eee;
+    &:hover {
+      background-color: #E3E3E3;
+    }
+    &:active {
+      background-color: #DDD;
+    }
+  }
+  .load-more-button {
+    
+    &.loading .ready, & .loading {
+      display: none!important;
+    }
+    & .ready, &.loading .loading {
+      display: block!important;
+    }
+  }
 }
 
-
-.content .content-wrap {
-  margin-top: $PC_slideBoxHeight;
-  width: 100%;
-  height: 1000px;
-  z-index: 10;
-  box-shadow: 0 0 10px #666;
-  background-color: #FFF;
-}
-
-
-.footer {
-  height: 100px;
-
-
-}
 
 
 

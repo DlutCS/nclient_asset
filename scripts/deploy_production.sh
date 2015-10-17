@@ -19,7 +19,7 @@ echo $DEPLOYSERVER
 
 //build
 npm install 
-npm build
+npm run build
 
 ls -l ${GITBASE}
 cd ${GITBASE}/build
