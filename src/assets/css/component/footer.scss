@@ -11,6 +11,8 @@
   background: url('../../image/icon_sprite_footer_small.png') no-repeat center center;
   width: 137px;
   height: 45px;
+  width: (137/16)rem;
+  height: (45/16)rem;
   display: inline-block;
   vertical-align: middle;
   zoom: 0.6;
@@ -19,12 +21,15 @@
   }
   &.travis {
     background-position: -137px 0px;
+    background-position: (-137/16)rem 0rem;
   }
   &.aliyun {
     background-position: -275px 0px;
+    background-position: (-275/16)rem 0rem;
   }
   &.python {
     background-position: -413px 0px;
+    background-position: (-413/16)rem 0rem;
   }
 }
 
