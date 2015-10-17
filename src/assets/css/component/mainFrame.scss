@@ -3,7 +3,7 @@
 .wrap {
   width: 100%;
   min-height: 100%;
-  margin: 0 auto -100px;
+  margin: 0 auto -125px;
   //width: 1000px;
   background-color: $baseBackgroundColor;
   //box-shadow:0 0 15px 1px #999;z-index: 0;
@@ -23,15 +23,13 @@
 @media (min-width: 1200px) {
   margin-top: $PC_slideBoxWideHeight+15px;
 }
-  padding-bottom: 105px;
+  padding-bottom: 135px;
   width: 100%;
   z-index: 10;
-  //box-shadow: 0 0 10px #666;
-  //background-color: #FFF;
 
   .inner {
-    box-shadow: 0 0 10px #666;
-    background-color: #F3F3F3;
+    box-shadow: 0px -10px 10px -10px rgba(52,52,52,0.5);
+    background-color: $baseBackgroundColor;
     width: $PC_contentWidth;
 @media (min-width: 1200px) {
   width: $PC_contentWideWidth;
@@ -55,6 +53,10 @@
       position: relative;
     }
 
-    
+    &.noheight {
+      min-height: auto;
+    }
   }
 }
+
+

@@ -2,7 +2,7 @@
 
 .footer {
   position: relative;
-  height: 100px;
+  height: 125px;
   z-index: 20;
 
 }
@@ -45,23 +45,25 @@
 
   .top {
     height: 25px;
+    font-size: 14px;
+    line-height: 25px;
     background-color: #dee0e5;
       border-top: 1px solid #C4C7CE;
       box-shadow: 0 0 15px rgba(102, 102, 102, 0.5);
   }
 
   .section {
-    height: 100px;
+    height: 70px;
     
     background-color: #2d3237;
     .about {
-      height: 70px;
+      height: 40px;
     }
     .service {
       font-size: 13px;
       color: #CCC;
       font-weight: normal;
-      line-height: 32px;
+      line-height: 26px;
       vertical-align: middle;
       .icon-footer {
         vertical-align: -12px;

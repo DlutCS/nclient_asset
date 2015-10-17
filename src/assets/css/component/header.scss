@@ -117,6 +117,10 @@
           &:hover, &:active {
             background-color: $HeaderContentBackgroundColorHighlight;
           }
+          &.nohover:hover, &.nohover:active {
+            background-color: #F9F9F9;
+            cursor: normal;
+          }
         }
       }
     }
