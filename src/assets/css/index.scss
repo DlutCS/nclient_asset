@@ -38,7 +38,8 @@ body{
         margin: 10px auto;
         width: ($PC_sectionImageWrapWidth) - 20px;
         min-height: 100px;
-        //background-color: #CCC;
+        max-height: 200px;
+        overflow: hidden;
         font-size: 0;
         .badge {
           position: absolute;
