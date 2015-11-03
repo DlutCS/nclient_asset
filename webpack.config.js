@@ -39,17 +39,17 @@ module.exports = {
       loader: 'babel-loader'
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader")
       //loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
     },
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize!autoprefixer-loader!less-loader")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!less-loader")
       //loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
     },
     {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract("style-loader", "css-loader?minimize!autoprefixer-loader!sass-loader")
+      loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
       //loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader!postcss-loader")
     },
     {
