@@ -29,8 +29,9 @@ function initConfig(cid) {
 
   if ( !container.data('news-offset') )
     container.data('news-offset', 0)
-  option.offset = container.children().length + container.data('news-offset');
+  option.offset = container.children().length + parseInt(container.data('news-offset'));
   option.button = $(option.moreButtonSelector)
+  option.cid  = container.data('news-category')
 }
 
 
@@ -61,7 +62,7 @@ function bindEvent(cid) {
     option.sync = true;
     try {
       $.ajax({
-        url: '/api/newslist/latest/',
+        url: '/api/newslist/category/' +option.cid+ '/latest/',
         type: 'GET',
         dataType: 'json',
         data: {
@@ -69,7 +70,7 @@ function bindEvent(cid) {
           template: true
         },
         success: function (data) {
-          //console.log(data)
+          console.log(data)
           container.append(data.template);
           option.offset += data.count
           afterAjax(cid)
