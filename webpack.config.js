@@ -3,6 +3,7 @@
 var path = require('path');
 var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
 
 var srcBase = path.resolve(__dirname, 'src/' ),
     buildBase = path.resolve( __dirname, 'build/' );
@@ -18,6 +19,15 @@ module.exports = {
     plugins: [
       new ExtractTextPlugin("[name].css"),
       new CommonsChunkPlugin('common', 'common.js', ['index', 'news', 'login'])
+      ,new UglifyJsPlugin({
+        mangle: {
+          except: ['$super', '$', 'module', 'exports', 'require', 'angular'],
+        },
+        exclude: /vendor/i,
+        compress: {
+          warnings: false
+        }
+      })
     ],
     module: {
     loaders: [{
